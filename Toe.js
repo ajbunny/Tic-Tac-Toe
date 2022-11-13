@@ -1,14 +1,18 @@
 const cells = document.querySelectorAll('.cell')
 const boardEl = document.getElementById('board')
-
+const winner = document.getElementById('winner')
+const restartBtn = document.getElementsByClassName('resetGame')
+const cell = Array.from(document.getElementsByClassName('cell'));
 
 const PlayerX ='X';
 const PlayerO ='O';
-let cell = Array.from(document.getElementsByClassName('board'));
- 
+
+let currentPlayer = 'X'; 
 let board = ['', '', '', '', '', '', '', '',];
 let isGameActive = true;
-let currentPlayer = 'X';
+let gameBoxes = Array(9).fill(null);
+console.log(gameBoxes)
+
 
 const PlayerX_Won = "PlayerX Won!"
 const PlayerO_Won = 'PlayerO Won!'
@@ -33,14 +37,32 @@ const winningConditions = [
 ];
 
 const startGame = () => {
-    console.log(cells)
+    
     cells.forEach(cell => cell.addEventListener('click', (e) => {
         cellsClicked(e) 
     }))
 }
-
 function cellsClicked(e) {
-    console.log(e.target)
+    const id = e.target.id
+    if(!gameBoxes[id]){
+        gameBoxes[id] = currentPlayer
+        e.target.innerText = currentPlayer
+
+        currentPlayer = currentPlayer == PlayerX ? PlayerO : PlayerX
+    }
+
+}
+
+restartBtn.addEventListener('click', restart)
+
+function restart() {
+    gameBoxes.fill(null)
+
+    cells.forEach(cell => {
+        cell.innerText = ''
+
+    })
+    currentPlayer = PlayerX;
 }
 
 startGame();

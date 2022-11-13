@@ -7,31 +7,36 @@
     <title>Tic-Tac-Toe</title>
     <script src="Toe.js" defer></script>
     <link rel="stylesheet" href="Toe.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+
+    
   </head>
   <body>
-    <main class="background">
+    <div class="container"> <!-- div class "container"-->
       <section class="title">
-        <h1>Tic Tac Toe</h1>
+        <h1>Tic - Tac - Toe</h1>
       </section>
-      <div class="PlayerDisplay">
+      <div class="PlayerDisplay"> <!-- playerText-->
         <h2>Display player's turn here</h2>
       </div>
       <div class="board">
-        <div class="cell" data-cell ></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
+        <div class="cell" id="0" ></div>
+        <div class="cell" id="1"></div>
+        <div class="cell" id="2"></div>
+        <div class="cell" id="3"></div>
+        <div class="cell" id="4"></div>
+        <div class="cell" id="5"></div>
+        <div class="cell" id="6"></div>
+        <div class="cell" id="7"></div>
+        <div class="cell" id="8"></div>
       </div>
 
       <div class="winningMessage">
         <div class="winner"><h2>Display winner of game</h2></div>
-        <button class="resetGame">Restart</button>
+        <button class="resetGame">Restart</button> <!--restart button -->
       </div>
-    </main>
+    </div>
   </body>
 </html>
