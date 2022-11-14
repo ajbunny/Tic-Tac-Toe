@@ -94,7 +94,7 @@ h1 {
     font-size: larger;
 }
 
-.resetGame {
+.restartBtn {
    display: flex;
    justify-content: center;
    margin: auto;

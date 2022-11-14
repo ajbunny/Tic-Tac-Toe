@@ -1,9 +1,10 @@
 const cells = document.querySelectorAll('.cell')
-const boardEl = document.getElementsByClassName('board')
-const winner = document.getElementsByClassName('winner')
-let restartBtn = document.getElementsByClassName('resetGame') /* still having issues with button*/
+const boardEl = document.getElementsByClassName('board') //don't think i need
+const winner = document.getElementsByClassName('winner') 
+let restartBtn = document.querySelector('.restartBtn') /* still having issues with button*/
 let playerDisplay = document.getElementsByClassName('PlayerDisplay')
-// const cell = Array.from(document.getElementsByClassName('cell'));
+// const cell = Array.from(document.getElementsByClassName('cell'));// don't think i need
+
 
 const PlayerX ='X';
 const PlayerO ='O';
@@ -61,7 +62,6 @@ function cellsClicked(e) {
 
 }
 
-
 function whoWon () {
      for (const condition of winningConditions) {
         let [a, b, c] = condition
@@ -74,14 +74,15 @@ function whoWon () {
      return false
 }
 
-// restartBtn.addEventListener('click', restart)   NOT WORKING, WILL RETURN
-
+// restartBtn.addEventListener('click', restart(e))   //NOT WORKING, WILL RETURN
+restartBtn.addEventListener('click', function(e) {
+    window.location.reload(false)
+})
 // function restart() {
 //     gameBoxes.fill(null)
 
 //     cells.forEach(cell => {
-//         cell.innerText = ''
-
+//         cell.innerText = ' '
 //     })
 //     currentPlayer = PlayerX;
 // }
