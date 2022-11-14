@@ -71,21 +71,21 @@ h1 {
     border: 2px solid black;
     width: 150px;
     height: 150px;
-    border-right: 2px ; 
-    border-bottom: 2px ; /* add solid to make the grid complete */
-    /* border-top: 2px solid; */
-     /* border-left: 2px solid; */
+    /* border-right: 2px ; 
+    border-bottom: 2px ; add solid to make the grid complete */
+    /* border-top: 2px solid; 
+     border-left: 2px solid; */
 
 }
 
- /* .cell:nth-child(1n) {
+  /* .cell:nth-child(1n) {
     border-left: none;
-} */
+}  */
  /* this is suppose to remove the sides to the grid but my grid is upside down??? // 
  problem for  */
 /* .cell:nth-child(6) ~ .cell {
     border-bottom: none;
-} */ 
+}   */
 
 .winner{
     display: flex;

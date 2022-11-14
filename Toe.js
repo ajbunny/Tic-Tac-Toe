@@ -1,8 +1,9 @@
 const cells = document.querySelectorAll('.cell')
-const boardEl = document.getElementById('board')
-const winner = document.getElementById('winner')
-const restartBtn = document.getElementsByClassName('resetGame')
-const cell = Array.from(document.getElementsByClassName('cell'));
+const boardEl = document.getElementsByClassName('board')
+const winner = document.getElementsByClassName('winner')
+let restartBtn = document.getElementsByClassName('resetGame') /* still having issues with button*/
+let playerDisplay = document.getElementsByClassName('PlayerDisplay')
+// const cell = Array.from(document.getElementsByClassName('cell'));
 
 const PlayerX ='X';
 const PlayerO ='O';
@@ -48,22 +49,42 @@ function cellsClicked(e) {
         gameBoxes[id] = currentPlayer
         e.target.innerText = currentPlayer
 
+        if(whoWon() !==false) {
+            playerDisplay = `${currentPlayer} has won the game!!`
+            let bigWinner = whoWon()
+
+            console.log(bigWinner)
+        }
+
         currentPlayer = currentPlayer == PlayerX ? PlayerO : PlayerX
     }
 
 }
 
-restartBtn.addEventListener('click', restart)
 
-function restart() {
-    gameBoxes.fill(null)
+function whoWon () {
+     for (const condition of winningConditions) {
+        let [a, b, c] = condition
 
-    cells.forEach(cell => {
-        cell.innerText = ''
+        if(gameBoxes[a] && (gameBoxes[a] == gameBoxes[b] && gameBoxes[a] == gameBoxes[c])) {
+            return [a,b,c]
+        }
+     }
 
-    })
-    currentPlayer = PlayerX;
+     return false
 }
+
+// restartBtn.addEventListener('click', restart)   NOT WORKING, WILL RETURN
+
+// function restart() {
+//     gameBoxes.fill(null)
+
+//     cells.forEach(cell => {
+//         cell.innerText = ''
+
+//     })
+//     currentPlayer = PlayerX;
+// }
 
 startGame();
 
