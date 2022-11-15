@@ -34,11 +34,12 @@ h1 {
     flex-direction: column;
    
 }
-.PlayerDisplay {
+.playerDisplay {
     display: flex;
     justify-content: center;
     margin-top: 15px;
     margin-bottom: 5px;
+    font-size: xx-large;
 }
 
 .board {
@@ -98,7 +99,7 @@ h1 {
    display: flex;
    justify-content: center;
    margin: auto;
-   padding: 5px 5px 5px 5px;
+   /* padding: 5px 5px 5px 5px; */
    margin-top: 20px;
    width: 150px;
    height: 40px;

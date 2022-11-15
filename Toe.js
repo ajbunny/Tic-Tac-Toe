@@ -1,19 +1,17 @@
 const cells = document.querySelectorAll('.cell')
-const boardEl = document.getElementsByClassName('board') //don't think i need
-const winner = document.getElementsByClassName('winner') 
-let restartBtn = document.querySelector('.restartBtn') /* still having issues with button*/
-let playerDisplay = document.getElementsByClassName('PlayerDisplay')
-// const cell = Array.from(document.getElementsByClassName('cell'));// don't think i need
+const winner = document.querySelector('.winner') 
+let restartBtn = document.querySelector('.restartBtn') //ask why get by class name didn't work
+let playerDisplay = document.querySelector('.playerDisplay')
 
 
 const PlayerX ='X';
 const PlayerO ='O';
 
 let currentPlayer = 'X'; 
-let board = ['', '', '', '', '', '', '', '',];
-let isGameActive = true;
+// let board = ['', '', '', '', '', '', '', '',];
+// let isGameActive = true;
 let gameBoxes = Array(9).fill(null);
-console.log(gameBoxes)
+let countBoxes = 0
 
 
 const PlayerX_Won = "PlayerX Won!"
@@ -46,17 +44,17 @@ const startGame = () => {
 }
 function cellsClicked(e) {
     const id = e.target.id
-    if(!gameBoxes[id]){
+    if(!gameBoxes[id] && countBoxes < 9){
         gameBoxes[id] = currentPlayer
         e.target.innerText = currentPlayer
 
         if(whoWon() !==false) {
-            playerDisplay = `${currentPlayer} has won the game!!`
-            let bigWinner = whoWon()
-
-            console.log(bigWinner)
+            playerDisplay.textContent = `${currentPlayer} has won the game!!`
+            let bigWinner = whoWon() 
+            countBoxes = 10
+            return bigWinner
         }
-
+        countBoxes++
         currentPlayer = currentPlayer == PlayerX ? PlayerO : PlayerX
     }
 
@@ -67,25 +65,22 @@ function whoWon () {
         let [a, b, c] = condition
 
         if(gameBoxes[a] && (gameBoxes[a] == gameBoxes[b] && gameBoxes[a] == gameBoxes[c])) {
+             document.getElementById(`${a}`).style.backgroundColor = 'rosybrown'
+             document.getElementById(`${b}`).style.backgroundColor = 'rosybrown'
+             document.getElementById(`${c}`).style.backgroundColor = 'rosybrown'
             return [a,b,c]
+
         }
-     }
+     
+     } 
 
      return false
+
 }
 
-// restartBtn.addEventListener('click', restart(e))   //NOT WORKING, WILL RETURN
 restartBtn.addEventListener('click', function(e) {
     window.location.reload(false)
 })
-// function restart() {
-//     gameBoxes.fill(null)
-
-//     cells.forEach(cell => {
-//         cell.innerText = ' '
-//     })
-//     currentPlayer = PlayerX;
-// }
 
 startGame();
 
