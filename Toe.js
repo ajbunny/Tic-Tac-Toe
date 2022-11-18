@@ -1,6 +1,6 @@
 const cells = document.querySelectorAll('.cell')
 const winner = document.querySelector('.winner') 
-let restartBtn = document.querySelector('.restartBtn') //ask why get by class name didn't work
+let restartBtn = document.querySelector('.restartBtn') 
 let playerDisplay = document.querySelector('.playerDisplay')
 
 
@@ -8,15 +8,13 @@ const PlayerX ='X';
 const PlayerO ='O';
 
 let currentPlayer = 'X'; 
-// let board = ['', '', '', '', '', '', '', '',];
-// let isGameActive = true;
 let gameBoxes = Array(9).fill(null);
 let countBoxes = 0
 
 
 const PlayerX_Won = "PlayerX Won!"
 const PlayerO_Won = 'PlayerO Won!'
-const tie = 'TIE!'
+
 
     /*
     playing board

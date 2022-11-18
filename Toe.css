@@ -49,15 +49,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     margin-top: 40px;
-    /* display: grid;
-    margin:  auto;
-    padding: 20px 20px 20px 20px; 
-    grid-template-columns: repeat(3, 1fr);
-    width: 300px;
-    height: 400px;
-    align-items: center;
-    justify-content: center; */
-    
+
 }
 
 
@@ -72,21 +64,11 @@ h1 {
     border: 2px solid black;
     width: 150px;
     height: 150px;
-    /* border-right: 2px ; 
-    border-bottom: 2px ; add solid to make the grid complete */
-    /* border-top: 2px solid; 
-     border-left: 2px solid; */
+
 
 }
 
-  /* .cell:nth-child(1n) {
-    border-left: none;
-}  */
- /* this is suppose to remove the sides to the grid but my grid is upside down??? // 
- problem for  */
-/* .cell:nth-child(6) ~ .cell {
-    border-bottom: none;
-}   */
+
 
 .winner{
     display: flex;
@@ -101,8 +83,8 @@ h1 {
    margin: auto;
    /* padding: 5px 5px 5px 5px; */
    margin-top: 20px;
-   width: 150px;
-   height: 40px;
+   width: 300px;
+   height: 150px;
    background-color: rosybrown;
    border-radius: 7%;
    border-color: darkgray;
